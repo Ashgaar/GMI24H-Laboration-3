@@ -3,28 +3,70 @@ using LaborationInterfaces;
 
 namespace Olsson_Mikael
 {
-    public class Laboration_3a : ILaboration_3_SortingAlgorithmInt
+    public class Mikael_Olsson_QuickSort : ILaboration_3_SortingAlgorithmInt
     {
+        //https://en.wikipedia.org/wiki/Quicksort
         public void Sort(int[] arr)
         {
-            int pivotValue = arr[0];
-            int[] temp = new int[arr.Length];
+            quickSort(arr, 0, arr.Length - 1);
+        }
 
-            for(int i = 1; i < arr.Length/2; i++)
+        public void quickSort(int[] arr, int left, int right)
+        {
+            if (left < right)
             {
-                int checkValueLow = arr[i];
-                int checkValueHigh = arr[arr.Length - i - 1];
-
-                if (checkValueLow < pivotValue && checkValueHigh > pivotValue)
+                if (right - left <= 10)
                 {
-                    temp[i] = checkValueLow;
-                    temp[arr.Length - i - 1] = checkValueHigh;
+                    insertionSort(arr, left, right);
                 }
-                
-                for(int j = 0; j < temp.Length; j++)
+                else
                 {
-                    Console.WriteLine(temp.Length);
-                    Console.WriteLine(temp[j]);
+                    int partitionIndex = Partition(arr, left, right);
+                    quickSort(arr, left, partitionIndex - 1);
+                    quickSort(arr, partitionIndex + 1, right);
+                }
+            }
+        }
+        
+        public int Partition(int[] arr, int left, int right)
+        {
+            Random random = new Random();
+
+            int pivot = arr[(left + right) / 2];
+            int lowestIndex = (left - 1);
+            int temp;
+
+            for (int i = left; i < right; i++)
+            {
+                if (arr[i] <= pivot)
+                {
+                    lowestIndex++;
+                    temp = arr[lowestIndex];
+                    arr[lowestIndex] = arr[i];
+                    arr[i] = temp;
+                }
+            }
+            temp = arr[lowestIndex + 1];
+            arr[lowestIndex + 1] = arr[right];
+            arr[right] = temp;
+
+            return lowestIndex + 1;
+        }
+
+
+        public void insertionSort(int[] arr, int left, int right)
+        {
+            int temp;
+            for (int i = left; i < right; i++)
+            {
+                for (int j = i; j > left; j--)
+                {
+                    if (arr[j] < arr[j - 1])
+                    {
+                        temp = arr[j];
+                        arr[j] = arr[j - 1];
+                        arr[j - 1] = temp;
+                    }
                 }
             }
         }
