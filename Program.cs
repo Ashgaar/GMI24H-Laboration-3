@@ -15,28 +15,46 @@ namespace Olsson_Mikael
         static void Main(string[] args)
         {
             Mikael_Olsson_PostfixCalculator lab = new Mikael_Olsson_PostfixCalculator();
-            string input1 = "1 2 +";
-            string input2 = "5 6 7 + -";
-            string input3 = "-2";
-            string input4 = "40 3 4 * -8 + /";
-            string input5 = "-1 -1 -";
-            string input6 = "1.1 2.1 -";
 
-            Console.WriteLine("Running calculator");
-            Console.WriteLine($"Running calculate with input {input1}");
-            Console.WriteLine(lab.Calculate(input1));
-            Console.WriteLine($"Running calculate with input {input2}");
-            Console.WriteLine(lab.Calculate(input2));
-            Console.WriteLine($"Running calculate with input {input3}");
-            Console.WriteLine(lab.Calculate(input3));
-            Console.WriteLine($"Running calculate with input {input4}");
-            Console.WriteLine(lab.Calculate(input4));
-            Console.WriteLine($"Running calculate with input {input5}");
-            Console.WriteLine(lab.Calculate(input5));
-            Console.WriteLine($"Running calculate with input {input6}");
-            Console.WriteLine(lab.Calculate(input6));
+            Mikael_Olsson_QuickSort quicksort = new Mikael_Olsson_QuickSort();
+            Mikael_Olsson_Stack stack = new Mikael_Olsson_Stack();
 
-            Console.WriteLine(1 + "*" + 2);
+            stack.Clear();
+            stack.Pop();
+
+            //int[] array = { -5, -4, -3, -2, -1, 0, 1, 2, 3, 4 };
+            //int[] array2 = { 1, -3, 2, 4, -5, -4, 3, 0, -2, -1 };
+            //int[] array3 = new int[20];
+
+            //quicksort.Sort(array);
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    Console.Write(array[i] + ", ");
+            //}
+            //Console.WriteLine();
+
+            //quicksort.Sort(array2);
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    Console.Write(array2[i] + ", ");
+            //}
+            //Console.WriteLine();
+            //for (int i = 0; i < array3.Length; i++)
+            //{
+            //    array3[i] = i;
+            //}
+            //quicksort.Sort(array3);
+
+            ////Console.WriteLine(array3[0]);
+            ////Console.WriteLine(array3[1]);
+            ////Console.WriteLine(array3[98]);
+            ////Console.WriteLine(array3[99]);
+            //Console.WriteLine();
+            //for (int i = 0; i < array3.Length; i++)
+            //{
+            //    Console.Write(array3[i] + ", ");
+            //}
+
 
             //Laboration_3d lab3 = new Laboration_3d();
             ////Console.WriteLine(lab3.Top());

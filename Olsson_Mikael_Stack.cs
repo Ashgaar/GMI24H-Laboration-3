@@ -3,6 +3,13 @@ using LaborationInterfaces;
 
 namespace Olsson_Mikael
 {
+    /// <summary>
+    /// Defines an exception to be used with the stack. 
+    /// </summary>
+    public class StackEmptyException : Exception
+    { }
+
+
     public class Mikael_Olsson_Stack : ILaboration_3_StackInt
     {
 
@@ -22,14 +29,9 @@ namespace Olsson_Mikael
             top.Data = default;
             top.Next = null;
             counter = 0;
-        }
+        }        
 
-        /// <summary>
-        /// Defines an exception to be used with the stack. 
-        /// </summary>
-        public class StackEmptyException : Exception
-        { }
-        
+
         /// <summary>
         /// Pushes <paramref name="element"/> onto the stack. 
         /// </summary>

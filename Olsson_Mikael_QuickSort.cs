@@ -5,7 +5,6 @@ namespace Olsson_Mikael
 {
     public class Mikael_Olsson_QuickSort : ILaboration_3_SortingAlgorithmInt
     {
-        //https://en.wikipedia.org/wiki/Quicksort
         public void Sort(int[] arr)
         {
             quickSort(arr, 0, arr.Length - 1);
@@ -15,7 +14,7 @@ namespace Olsson_Mikael
         {
             if (left < right)
             {
-                if (right - left <= 10)
+                if ((right - left) <= 10)
                 {
                     insertionSort(arr, left, right);
                 }
@@ -30,8 +29,6 @@ namespace Olsson_Mikael
         
         public int Partition(int[] arr, int left, int right)
         {
-            Random random = new Random();
-
             int pivot = arr[(left + right) / 2];
             int lowestIndex = (left - 1);
             int temp;
@@ -47,8 +44,8 @@ namespace Olsson_Mikael
                 }
             }
             temp = arr[lowestIndex + 1];
-            arr[lowestIndex + 1] = arr[right];
-            arr[right] = temp;
+            arr[lowestIndex + 1] = arr[pivot+1];
+            arr[pivot+1] = temp;
 
             return lowestIndex + 1;
         }
@@ -57,7 +54,7 @@ namespace Olsson_Mikael
         public void insertionSort(int[] arr, int left, int right)
         {
             int temp;
-            for (int i = left; i < right; i++)
+            for (int i = left; i < right+1; i++)
             {
                 for (int j = i; j > left; j--)
                 {
