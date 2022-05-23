@@ -16,15 +16,27 @@ namespace Olsson_Mikael
         {
             Mikael_Olsson_PostfixCalculator lab = new Mikael_Olsson_PostfixCalculator();
 
+            Random random = new Random();
             Mikael_Olsson_QuickSort quicksort = new Mikael_Olsson_QuickSort();
             Mikael_Olsson_Stack stack = new Mikael_Olsson_Stack();
 
             stack.Clear();
             stack.Pop();
 
+
+
             //int[] array = { -5, -4, -3, -2, -1, 0, 1, 2, 3, 4 };
             //int[] array2 = { 1, -3, 2, 4, -5, -4, 3, 0, -2, -1 };
-            //int[] array3 = new int[20];
+            //int[] array3 = new int[100];
+            //int[] array4 = new int[50];
+
+
+            //for (int j = 0; j < array4.Length; j++)
+            //{
+            //    array4[j] = random.Next(0, 100);
+            //}
+
+
 
             //quicksort.Sort(array);
             //for (int i = 0; i < array.Length; i++)
@@ -34,7 +46,7 @@ namespace Olsson_Mikael
             //Console.WriteLine();
 
             //quicksort.Sort(array2);
-            //for (int i = 0; i < array.Length; i++)
+            //for (int i = 0; i < array2.Length; i++)
             //{
             //    Console.Write(array2[i] + ", ");
             //}
@@ -44,6 +56,16 @@ namespace Olsson_Mikael
             //    array3[i] = i;
             //}
             //quicksort.Sort(array3);
+            //for (int i = 0; i < array3.Length; i++)
+            //{
+            //    Console.Write(array3[i] + ", ");
+            //}
+            //Console.WriteLine();
+            //quicksort.Sort(array4);
+            //for (int i = 0; i < array4.Length; i++)
+            //{
+            //    Console.Write(array4[i] + ", ");
+            //}
 
             ////Console.WriteLine(array3[0]);
             ////Console.WriteLine(array3[1]);

@@ -3,13 +3,6 @@ using LaborationInterfaces;
 
 namespace Olsson_Mikael
 {
-    /// <summary>
-    /// Defines an exception to be used with the stack. 
-    /// </summary>
-    public class StackEmptyException : Exception
-    { }
-
-
     public class Mikael_Olsson_Stack : ILaboration_3_StackInt
     {
 
@@ -61,7 +54,6 @@ namespace Olsson_Mikael
             {
                 throw new StackEmptyException();
             }
-           //return 0;
         }
 
         /// <summary>
@@ -82,7 +74,6 @@ namespace Olsson_Mikael
             {
                 throw new StackEmptyException();
             }
-            //return default;
         }
 
         /// <summary>

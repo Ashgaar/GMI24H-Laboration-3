@@ -26,28 +26,38 @@ namespace Olsson_Mikael
                 }
             }
         }
-        
+
         public int Partition(int[] arr, int left, int right)
         {
-            int pivot = arr[(left + right) / 2];
-            int lowestIndex = (left - 1);
+            int pivot_middle = (left + right) / 2;
             int temp;
+
+            if (pivot_middle != right)
+            {
+                temp = arr[pivot_middle];
+                arr[pivot_middle] = arr[right];
+                arr[right] = temp;
+            }
+
+            int pivot = arr[right];
+            int lowestIndex = left;
 
             for (int i = left; i < right; i++)
             {
                 if (arr[i] <= pivot)
                 {
-                    lowestIndex++;
                     temp = arr[lowestIndex];
                     arr[lowestIndex] = arr[i];
                     arr[i] = temp;
+                    lowestIndex++;
                 }
             }
-            temp = arr[lowestIndex + 1];
-            arr[lowestIndex + 1] = arr[pivot+1];
-            arr[pivot+1] = temp;
 
-            return lowestIndex + 1;
+            temp = arr[lowestIndex];
+            arr[lowestIndex] = arr[right];
+            arr[right] = temp;
+
+            return lowestIndex;
         }
 
 
